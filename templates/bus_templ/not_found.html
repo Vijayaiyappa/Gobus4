@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+     <link rel="stylesheet" href={% static 'style/not_found.css' %}>
+
+   
+   
+    </head>
+    <body>
+        <div class="piret">
+       
+           
+            <img src="http://1.bp.blogspot.com/-1T2uTBQ-5RQ/VAxRDK2ApSI/AAAAAAAALxA/FAkzLN1K_sU/s1600/oops-smiley.jpg">
+                 <h2>No Result Found</h2>
+   
+       
+        <p>We've searched your request throughly,<br>We didn't find any result to your search.</p>
+            <h3>Make sure the data entred are correct.</h3>
+            <a href="{% url 'home' %} " class="btn">Search Again &#8594;</a>
+    </div>
+   
+    </body>
+   
+</html>

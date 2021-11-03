@@ -1,0 +1,150 @@
+
+{% load account %}
+{% load  static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title2</title>
+  <script src={% static 'js/placeselect1.js' %}></script>
+  <script src={% static 'js/placeselect_2.js' %}></script>
+  <link rel="stylesheet" href={% static 'style/home1.css' %}>
+  <link rel="stylesheet" href={% static 'style/input.css' %}>
+   
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+   
+   
+</head>
+
+<body>
+<nav>
+
+<input   type="checkbox" id="check">
+   <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+	</label>
+<label class="logo">viche<i class="fas fa-bus"></i></div></label>
+
+    <ul>
+	   <li><a class="active" href ="#">home</a></li>
+	   <li><a href ="/accounts/login">sigin</a></li>
+	   <li><a href ="#">service</a></li>
+	   <li><a href ="#">feedback</a></li>
+	   <li><a href ="#">some</a></li>
+     <li>user <a>{% user_display user %}</a></li>
+     
+	</ul>
+</nav>
+<div class="headerbottom">
+ <a href="#"> <label class="add"><i class="fas fa-plus-square"></i>add address</label></a>
+ <a href="#"> <label class="help">help!</i></label></a>
+</div>
+
+<div class="inputfn">
+<form action="details" method="POST" class ="form" id="form1">
+   {% csrf_token %}
+    <div class="text_field">
+      <label>source</label><br>
+     <div class="wrap">
+        <input type="text" id="myInput" name="dest1" onkeyup="myFunction()"     onfocus="show()" placeholder="Source" title="Type in a name" autocomplete="off">
+        <div  id="hid"> 
+          <div class ="inactive " id="get"> 
+            <ul id="myTable">
+              <li>madikeri</li>
+              <li>banglore</li>
+              <li>islang</li>
+              <li>germany</li>
+              <li>banglore</li>
+              <li>islang</li>
+              <li>germany</li>
+            </ul>
+        </div>
+        </div>
+       </div>
+    </div>
+    <div class="text_field">
+      <label>destionation</label><br>
+      <div class="wrap">
+        <input type="text" id="myInput2"  name="dest2" onkeyup="myFunction2()"   onfocus="show2()"   placeholder="Destionation" title="Type in a name" autocomplete="off">
+        <div  id="hid2">
+     
+          <div class ="inactive2" id="get2"> 
+            <ul id="myTable2">
+              <li>germany</li>
+              <li>banglore</li>
+              <li>islang</li>
+              <li>Napoklu</li>
+            </ul>
+        </div>
+        </div>
+       </div>
+     
+    </div>
+    <div class="clock2">
+    <div class="inner">
+   <div id="time1" ><p>Enter the time :</p></div>
+    </div>
+    <div class="inner">
+    <div class="time" >
+      <!--<input type="number"  maxlength="2" ></input>-->
+      <input name="hour"
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    type = "number"
+    maxlength = "2"
+    max="12"
+ />
+    <div class="separator">:</div>
+   
+ 
+    <!--<input type="number"  maxlength="2"></input>-->
+    <input name="minute"
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    type = "number"
+    maxlength = "2"
+    max="59"
+ />
+     </div>
+    </div>
+  
+  <div class="inner ">
+    <div class="ampm">
+    <select id="time" name="time">
+      <option value="AM">AM</option>
+      <option value="PM">PM</option>
+     
+    </select>
+</div>
+  </div>
+</div>
+
+
+    <div  onclick="scrolldown()" class="search">
+      <input type="submit" vlaue="search"></input>
+    </div>
+    
+
+    <!--for displaying bus details-->
+
+  </form>
+  </div>
+</div>
+<div class="fotter">
+  <div class="box">
+  <div class ="twitter">
+  <i class="fab fa-twitter"></i><label>  twitter</label>
+</div>
+<div class="facebook">
+
+  <i class="fab fa-facebook-square"></i><label>  facebook</label>
+   
+</div>
+</div>
+</div>
+</body>
+
+</html>

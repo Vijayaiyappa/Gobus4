@@ -1,0 +1,229 @@
+
+
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+	
+  }
+  body{
+	font-family: montserrat;
+	background: whitesmoke;
+  }
+  nav{
+	background:#0b3c8a;
+
+	height: 80px;
+	width: 100%;
+  }
+  label.logo{
+	color: white;
+	font-size: 35px;
+	line-height: 80px;
+	padding: 0 100px;
+	font-weight: bold;
+  }
+  nav ul{
+	float: right;
+	margin-right: 20px;
+  }
+  nav ul li{
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 5px;
+  }
+  nav ul li a{
+	color: white;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	text-transform: uppercase;
+  }
+  a.active,a:hover{
+	background: #1b9bff;
+	transition: .5s;
+  }
+.checkbtn{
+	font-size: 30px;
+	color: white;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+  }
+  #check{
+	display: none;
+  }
+@media (max-width: 952px){
+	label.logo{
+	  font-size: 30px;
+	  padding-left: 50px;
+	}
+	nav ul li a{
+	  font-size: 16px;
+	}
+  }
+@media (max-width: 858px){
+	.checkbtn{
+	  display: block;
+	}
+	ul{
+	  position: fixed;
+	  width: 100%;
+	  height: 100vh;
+	  background: #2c3e50;
+	  top: 80px;
+	  left: -100%;
+	  text-align: center;
+	  transition: all .5s;
+	}
+	nav ul li{
+	  display: block;
+	  margin: 50px 0;
+	  line-height: 30px;
+	}
+	nav ul li a{
+	  font-size: 20px;
+	}
+	a:hover,a.active{
+	  background: none;
+	  color: #0082e6;
+	}
+	#check:checked ~ ul{
+	  left: 0;
+	}
+	body .table-box .table-row {
+    width: 90%;
+	
+	}
+	body .table-box .table-top {
+		height: 230px;
+  }
+}
+  section{
+	
+	background-size: cover;
+	height: calc(100vh - 80px);
+  }
+  .wrapper{
+	  margin:-1% 10% -1% 10% ;
+	  box-shadow: 0 1px 4px 0 rgba(0,0,50, 0.3);
+	  background: white;
+	  padding:3px;
+  }
+  .table-box{
+	  
+	  margin:50px auto;
+  }
+  .table-row{
+	  width:70%;
+	  padding:20px;
+	  background:transparent ;
+	  margin:3px auto;
+	  color:#555;
+	  font-size:20px;
+	  box-shadow: 0 1px 4px 0 rgba(0,0,50, 0.3);
+  }
+  .table-top{
+	  background:#3b5998 ;;
+	  color:white;
+	  border-radius:5px;
+  }
+  .table-head{
+	  font-weight:bold;
+  }
+ .table-middle{
+
+	 padding-bottom:6px;
+	 
+ }
+ .table-cell{
+	margin-top:3px;
+ }
+ .inline{
+	 display:inline-block;
+	 margin-right:30px;
+ }
+.menu_bar{
+	
+	float:right;
+	line-height: 10px;
+	font-size:17px;
+
+}
+.fa-angle-double-left{
+color:#5c8a8a;
+font-size: 50px;
+
+}
+/* css on menus */
+.menu{
+	display:none;
+	position:absolute;
+	box-shadow: 0 1px 4px 0 rgba(0,0,50, 0.3);
+	background:white;
+}
+
+.menu label{
+	display:flex;
+	padding:14px;
+	cursor: pointer;
+}
+.menu label:hover{
+	background:rgba(0,0,50, 0.1);
+}
+.checker{
+	display:none;
+    cursor: pointer;
+}
+.wrapper .table-box .likes_dislike
+{
+  
+	line-height:10%;
+	float:right;
+	margin-top:-3%;
+	
+}
+.lkdk
+{
+display:inline-block;
+font-size:27px;
+margin-right:15px;
+
+}
+.likes_dislike p{
+	
+	font-size:20px;
+	margin-left:5px;
+}
+
+button{
+	background:none;
+	border:none;
+	font-size: 20px;
+}
+.color1{
+color:white;
+}
+/* add user data */
+.btz{
+
+  float: right;
+  width:100px;
+  padding: 15px;
+  background:green;
+  color:white;
+  outline:none;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
+  margin-right: 20px;
+  margin-bottom: 70px;
+
+  
+
+}

@@ -1,0 +1,139 @@
+body{
+   background-size: cover;
+   background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+}
+.flex {
+  display: flex;
+  min-width: 0;
+}
+h1{
+  color: white;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.items-start {
+  align-items: start;
+}
+
+.justify-start {
+  min-width: none;
+  max-width: none;
+  justify-content: flex-start;
+
+}
+
+.comment-container {
+  margin: 3rem auto;
+  max-width: 600px;
+  border: 3px solid black;
+  border-radius: 8px;
+  min-height: 200px;
+    background: white;
+ 
+   
+}
+
+.comment-container-title {
+  padding: 1rem 2rem;
+  background: #f8f8f8;
+  margin-top: 0;
+  border-bottom: 1px solid #ebebeb;
+  color: #2d3748;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.comment {
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  overflow-x: scroll;
+}
+
+.comment-new {
+ 
+  padding-top: 2rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid #adaada;
+ 
+}
+
+.comment-avatar {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+}
+
+.comment-author {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.comment-body {
+  line-height: 1.4;
+  color: red;
+  margin: 0;
+  padding-right: 1rem;
+
+}
+
+.comment-input {
+  border: 1px solid #dddd;
+  line-height: 1.4;
+  overflow-x: hidden;
+  color: #4a5568;
+  border-radius: 8px;
+  padding: 0.8rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: #5c6ac4;
+    outline: none;
+  }
+}
+
+.comment-submit {
+  background: #5c6ac4;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    filter: brightness(110%);
+  }
+   
+}
+
+.comment-submit1 {
+float: right;
+    height: 38px;
+    width: 70px;
+    background: #5c6ac4;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    filter: brightness(110%);
+  }
+   
+}

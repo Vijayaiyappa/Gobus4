@@ -1,0 +1,31 @@
+{% load static  %}
+<html>
+
+<head>
+    <!--<link rel="stylesheet" href="part.css">-->
+  <meta charset="UTF-8">
+ <!-- <link rel="stylesheet" type="text/css" href="tv.css">-->
+ <link rel="stylesheet" href={% static 'style/userinput_details.css' %}>
+  <title>user input</title>
+</head>
+    <body>
+<form action="userinp" method="GET" >
+  
+    <div class="recto">
+    <h1>BUS DETAILS</h1>
+  <input type="text" class="user-input" placeholder="Source:" name="source" autocomplete="off"/> 
+  <input type="text" class="user-input" placeholder="Destination:" name="destination" autocomplete="off" />
+  <input type="text" class="user-input" placeholder="Middle-Route:" name="middleroot" autocomplete="off"/>
+  Arrival-Time:<input type="time"  class="user-input" name="arrive_t" autocomplete="off"/>
+  Departure-Time:<input type="time"  class="user-input"  name="depart" autocomplete="off" />
+  <input type="text" class="user-input" placeholder="Bus-Name:" name="busnamesid" autocomplete="off" />
+   
+  <input type="submit" name="userinp">
+    </div>
+</form>
+       
+    </body>
+
+
+
+</html>

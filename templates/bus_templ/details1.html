@@ -1,0 +1,191 @@
+{% load static %}
+{% load account %}
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+	<!--<script src="https://kit.fontawesome.com/a076d05399.js"></script>-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
+   <link rel="stylesheet" href={% static 'style/detail5.css' %}>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src= {% static 'js/menus6.js' %}></script>
+   <script src= {% static 'js/day3.js' %}></script>
+    <script src={% static 'js/likebtns501.js' %}></script>
+  
+</head>
+
+<body> 
+
+  <input id="auth" value='{{auth|safe}}' type="hidden"/>
+<nav>
+
+<input  onclick="myfun()" type="checkbox" id="check" >
+   <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+	</label>
+
+        <div class="logo"> <img  style="height:75px; margin-left:20px;float:left; width:220px; " src="{% static 'images/logo3.png' %}"></div></div>
+
+
+    <ul>
+	   <li><a  href ="{% url 'home' %}">home</a></li>
+	   <li><a href ="{% url 'userinputs' %}">ADD_DATA</a></li>
+     
+	</ul>
+</nav>
+
+<a href={% url 'home' %} >
+<i class="fas fa-angle-double-left"></i> 
+</a>
+<div class="wrapper">
+<div class="table-box">
+    <input type="hidden" value="{{src1}}" id="src_id">
+     <!--<input type="hidden" value="{{dest1}}" id="dest_id">-->
+    <!-- <a href="{% url 'userinputs' %}"  class="btz">ADD_DATA</a>-->
+     
+
+
+    <div class="table-row table-top">
+      <div class="table-cell table-head">
+        <p>Showing the results for  {{src1}} to {{dest1}} </p>
+      </div>
+      <div class="table-cell table-middle">
+        <p>  Middle route:{{mid1}}</p>
+      </div>
+      <div class="table-cell lst-cell">
+	  
+        <p>Travel exprience:{{to}}</p>
+	<form class="likerdisliker" >
+     {% csrf_token %}
+      <div class="likes_dislike" >
+       
+  <button class=" {% if auth %} {% if f_id in like_post_id %} color1 1 {% else %} 0 {% endif %} {% endif %} lkdk likbtn_new" value={{f_id}}><i class="fas fa-thumbs-up"></i><p class="lkdk">{{f_likecount}}</P></button>
+    <!--  <button class="lkdk up    add1 color{{like1}}" value="like"  id="{{f_id}}"><i class="fas fa-thumbs-up"></i><p class="lkdk">10k</P></button>
+     <button class="add2 lkdk  up color{{dislike1}}" value="dislike" id="{{f_id}}"><i class="fas fa-thumbs-down"></i><p class="lkdk">5k</P></button>
+     -->
+    </div>
+	</form>
+	
+      </div>
+      </div>
+
+
+   
+    {% for town in towns  %}
+      
+      {% if  town.id  in tempmid %}
+    
+    <div class="table-row table-top">
+      <div class="table-cell table-head">
+        <!-- if town id in  likesdis_array  -->
+        <p>Showing the results for  {{town.source}} to {{town.destination}}</p>
+      </div>
+      <div class="table-cell table-middle">
+        <p>  Middle route:{{town.Middle_route}}   {% if town.id in post_id_arr %} like:{{binlikdisk.1.likes}} dislike:{{binlikdisk.dislikes}} {% endif %}</p>
+      </div>
+      <div class="table-cell lst-cell">
+        <p>Travel exprience:</p>
+
+    <form  class="likerdisliker"  >
+    {% csrf_token %}
+    <div class="likes_dislike" >
+      
+      <button class="{% if auth %} {% if town.id in like_post_id %} color1 1 {% else %} 0 {% endif %} {% endif %} lkdk likbtn_new" value={{town.id}}><i class="fas fa-thumbs-up"></i><p class="lkdk">{{town.likes_count}}</P></button>
+     <!--<button class="add1 lkdk  up color{{binlikdisk.likes}} " value="like" id="{{town.id}}"><i class="fas fa-thumbs-up"></i><p class="lkdk">10k</P></button>
+     <button class="add2 lkdk  up color{{binlikdisk.dislikes}}" value="dislike" id="{{town.id}}"><i class="fas fa-thumbs-down"></i><p class="lkdk">5k</P></button>-->
+	  </div>
+     </form>
+
+		
+      </div>
+      </div>
+
+       <div class="table-row">
+    <div class="table-cell table-head">
+	
+     <div class="menu_bar" >
+	 <input type="checkbox" id ="m{{town.id}}" class="check checker" >
+
+   <form >
+   {% csrf_token %}
+	  <div class="menu" id="{{town.id}}">
+	 
+	  <label class="0">Incorrect time</label>
+  <label class="1">Incorrect Busname</label>
+  <label class="2">Incorrect data</label>
+   <input type="hidden" value="{{town.id}}" >
+   <input type="hidden" value="{{town.Middle_route}}">
+	 </div>
+    </form>
+   <input type="hidden" value="{{town.id}}">
+	 <label for="m{{town.id}}"><i class="fas fa-ellipsis-v"></i>
+	 </label></div> <p>Busname:{{town.Busname}} </p>
+	 </div>
+    <div class="table-cell inline">
+      <p>Arrive time :{{town.arrive_t|time:"h:i a"}}  {% if user.is_superuser %}  Postid:{{town.id}} {% endif %}</p>
+    </div>
+    <div class="table-cell inline">
+      <p>Departure time :{{town.leave_t|time:"h:i a"}}</p>
+    </div>
+    </div>
+    
+    {% else %}
+  
+  <div class="table-row">
+    <div class="table-cell table-head">
+	
+     <div class="menu_bar" >
+
+	 <input type="checkbox" id ="m{{town.id}}" class="check checker" /> 
+	  <div class="menu">
+  <label class="0">Incorrect time</label>
+  <label class="1">Incorrect Busname</label>
+  <label class="2">Incorrect data</label>
+  <!--<label class="3">comp4</label>-->
+   <input type="hidden" value="{{town.id}}" >
+  <!-- <input type="hidden" value="{{town.Middle_route}}">-->
+   
+	 </div>
+
+	 <label for="m{{town.id}}"><i class="fas fa-ellipsis-v"></i>
+	 </label></div> <p>Busname:{{town.Busname}}    </p>
+	 </div>
+    <div class="table-cell inline">
+ 
+      <p>Arrive time : {{town.arrive_t|time:"h:i a"}}{% if user.is_superuser %}  Postid:{{town.id}} {% endif %}</p>
+    </div>
+    <div class="table-cell inline">
+       
+      <p>Departure time :{{town.leave_t|time:"h:i a"}}</p>
+      
+    </div>
+    </div>
+   {% endif %}  
+    {% endfor %}
+
+  
+</div>
+<form action="detailquery" method="POST">
+{% csrf_token %}
+<input type="hidden" value="{{src1}}" name="source">
+<input type="hidden" value="{{dest1}}" name= "dest">
+<input type="hidden" value="{{time}}" name= "time"> 
+
+
+<button type="submit" style="background:yellow; width:150px ;height:40px;border-radius:5px;cursor:pointer" >MORE_INFO?</button>
+</form> 
+
+
+<div class="headerbottom">
+<!-- some code will be inserted -->
+</div>
+
+
+<div class="footer">
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+
+{% load static %}
+<html>
+<head>
+ <link rel="stylesheet" href={% static 'style/userinput_details.css' %}>
+  <title>user input</title>
+</head>
+    <body>
+    <style >
+    input{
+        font-size:20px;
+        width:350px;
+    }
+    </style>
+<form action="updater" method="POST" >
+  
+    <div class="recto" style='height:800px' >
+    <h1>Update DETAILS</h1>
+   {% csrf_token %}
+ <h3>source:</h3>
+ <input type="text" name="source" value={{data.source}}  />
+<h3> Destination:</h3>
+<input type="text" name="dest" value="{{data.destination}}"/>
+<h3>Arrive_t:</h3>
+<input type="text" name="arrive_t" value="{{data.arrive_t|time:'h:i a'}}"/>
+<h3>Leave_t:</h3>
+<input type="text" name="leave_t"  value="{{data.leave_t|time:'h:i a'}}"/>
+<h3>Middle_route:</h3>
+<input type="text" name="middle_route" value="{{data.Middle_route}}"/>
+<h3>Busname:</h3>
+<input type="text" name="busname" value="{{data.Busname}}"/>
+<h3>Town_id:</h3>
+ <input type="text" name="twn_id" value="{{town_id}}"/>
+<input style="margin-top:20px" type="submit" value="update"/>
+  
+    </div>
+</form>
+       
+    </body>
+
+
+
+</html>

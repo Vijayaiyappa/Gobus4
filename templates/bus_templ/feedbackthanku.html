@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+<head><title>some text</title>
+   
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <link rel="stylesheet" href={% static 'style/thanks4feed.css'  %}>
+    </head>
+    <body>
+
+
+<section class="wrapper">
+ 
+   
+     
+        <div class="thankyou-wrapper">
+          <h1><img src="http://montco.happeningmag.com/wp-content/uploads/2014/11/thankyou.png" alt="thanks" /></h1>
+          <p>for your valuable Feedback </p>
+          <a href={% url 'home' %} class="btn">Back to home</a>
+         
+        </div>
+       
+     
+   
+   
+ 
+</section>
+    </body>
+</html>

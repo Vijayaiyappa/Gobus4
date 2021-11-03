@@ -1,0 +1,10 @@
+.hi {
+    color:red;
+    background: red;
+}
+ .hi input{
+    background: green;
+}
+*{
+    background: green;
+}

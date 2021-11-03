@@ -1,0 +1,51 @@
+header{
+      
+    color: antiquewhite;
+    
+     text-align: center;
+ }
+ *{
+	 background:smokewhite;
+ }
+ .container{
+     padding: 0 20px 0 20px;
+     max-height: 900px;
+ }
+ .container img{
+     padding: 25px;
+ }
+ p{
+     color: black;
+     text-align: center;
+ }
+ 
+ h1{
+      text-align:center;
+     font-size: 60px;
+     background: -webkit-linear-gradient(   #0000ff 0%, #cc0066 100%);
+     -webkit-background-clip:text;
+     -webkit-text-fill-color:transparent;
+ }
+     
+ 
+ h2{
+     padding: 20px;
+     font-size: 30px;
+     text-decoration-color: #17202A ;
+     
+ }
+ .btn2{
+	
+    
+  width:100px;
+  height: 50px;
+  background:green;
+  outline:none;
+  border:none;
+  margin-top: 30px;
+
+  border-radius:5px;
+  font-size:18px;
+  cursor:pointer;
+  color:white;
+}

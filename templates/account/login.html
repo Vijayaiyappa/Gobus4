@@ -1,0 +1,66 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_links %} 
+
+<title>Sign In</title>
+
+{% endblock %}
+
+<h3>{% block head_title %}{% trans "Sign In" %} {% endblock %}</h3>
+
+{% block content %}
+
+
+ {% block messages %}
+    {% if messages %}
+    <div>
+        <ul>
+       <!-- {% for message in messages %}
+       <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{message}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+       </div>-->
+        {% endfor %}
+        </ul>
+    
+    {% endif %}
+  {% endblock %}
+
+
+<div class="center">
+  <div class="bus_icon">
+  <h1>Login</h1>
+</div>
+
+<!--
+<script> 
+$(".text_field input ").css("color","red")
+$("body form p .text_field input").attr("autocomplete","off");
+
+alert("hi")
+</script>-->
+<form  method="POST" action="{% url 'account_login' %}"  autocomplete="off">
+  {% csrf_token %}
+  <div class="text_field">
+  
+  {{ form.as_p }}
+    
+  </div>
+
+  {% if redirect_field_value %}
+  
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  
+  {% endif %}
+  
+  <button  class="btn btn-primary btn-lg btn-block" type="submit">{% trans "Sign In" %}</button>
+  <a  href="{% url 'account_reset_password' %}">{% trans "Forgot Password ?" %}</a> <br> 
+   {% blocktrans %}Dont have an account? Then  <a href="{{ signup_url }}">signup</a>.{% endblocktrans %}
+
+</form>
+</div>
+{% endblock %}

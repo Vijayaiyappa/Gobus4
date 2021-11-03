@@ -1,0 +1,73 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+       
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href={%  static 'style/detailquery.css' %}>
+    </head>
+    <body>
+      <section class="contact">
+       
+        <div class="container">
+         
+            <div class="ContatForm">
+            <form action="dump_data" method="POST" >
+            {% csrf_token %} 
+                <h2>MORE_INFO </h2>
+                <div class="row">
+                   
+                <input type="hidden" value={{src}} name="source"/>
+                  <input type="hidden"  value={{dest}} name="dest">
+                  <input type="hidden"   value={{time}} name="time"/>
+              <!--  <div class="inputBox">
+                <input type="text" value={{src}} name="source"/>
+                <span>Source</span>
+                </div>
+                     <div class="inputBox">
+                <input type="text"  required="required" value={{dest}} name="dest">
+                <span>Destination</span>
+                </div>
+                     <div class="inputBox">
+                <input type="text"  required="required" value={{time}} name="time"/>
+                <span>Time</span>
+                </div>-->
+                 {{src}} to {{dest}} 
+                time: {{time}}
+                <div class="inputBox">
+                <input type="text"  name="email" required="required" autocomplete="off">
+                <span>Email</span>
+                </div>
+               
+  
+                    <div class="inputBox">
+                <input type="text"  required="required" name="name" autocomplete="off">
+                <span>Name</span>
+                </div>
+                <p class="text">
+        <textarea  type="comment" name="comments" class="validate[required,length[6,300]] feedback-input" id="feedback-comment" required placeholder= "Comment."></textarea>
+      
+      </p>
+                 <div class="inputBox">
+              <button type="submit">submit</button>
+               
+                </div>
+                </div>
+               
+                </form>
+            </div>
+          </div>
+         
+        </section>
+    </body>
+</html>
+

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+.contact{
+    position: relative;
+    min-height: 70vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  background-image: url("https://image.shutterstock.com/image-photo/blue-background-texture-260nw-1552346156.jpg");
+    background-size: cover;
+}
+
+
+
+.container{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.row {
+  position: relative;
+  margin-top: 25px;
+}
+.row input,
+.row textarea {
+  width: 15em;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-family: inherit;
+  color: inherit;
+  font-size: 15px;
+  background: white;
+}
+.row1 {
+  position: relative;
+  margin-top: 25px;
+}
+.row1 input,
+.row1 textarea {
+  width: 15em;
+    height: 6em;
+line-height: 25px;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-family: inherit;
+  color: inherit;
+  font-size: 15px;
+  background: white;
+}
+#feedback-comment {
+  background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+  background-size: 30px 30px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#feedback-comment {
+  width: 70%;
+  height: 100px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+
+
+.ContatForm{
+    width: 40%;
+    padding: 40px;
+    background: #fff;
+}
+.ContatForm h2{
+    font-size: 50px;
+    color: #333;
+    font-weight: 500;
+}
+.ContatForm .inputBox{
+    position: relative;
+    width: 70%;
+    margin-top: 10px;
+}
+.ContatForm .inputBox input,
+.ContatForm .inputBox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+}
+.ContatForm .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+.ContatForm .inputBox input:focus ~ span,
+.ContatForm .inputBox input:valid ~ span,
+.ContatForm .inputBox textarea:focus ~ span,
+.ContatForm .inputBox textarea:valid ~ span{
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+.ContatForm .inputBox input[type="submit"]{
+    width: 100px;
+    background: #00bcd4;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+@media(max-width:991px)
+{
+    .contact{
+        padding: 50px;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .container .contactInfo{
+        margin-bottom: 60px;
+    }
+    .container .contactInfo,
+    .ContatForm{
+        width: 100%;
+    }
+}

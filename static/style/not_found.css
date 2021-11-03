@@ -1,0 +1,48 @@
+h2{
+        text-align: center;
+        font-size: 62px;
+         background: -webkit-linear-gradient(  #009999 0%, #999966 100%);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+        font-family:monospace;
+   
+    }
+   
+   
+    p{
+        text-align: center;
+        font-size: 30px;
+        background: -webkit-linear-gradient( #000066 22%, #ff6600 100%);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+    font-family: fantasy;
+         }
+  h3{
+        text-align: center;
+        font-size: 24px;
+        color: black;
+        font-family:cursive;
+       
+       
+    }
+    .btn{
+    margin-left: 560px;
+    background:  #cc0000;
+    color:#fff;
+    padding: 8px 30px;
+   
+    border-radius:30px;
+   
+}
+.btn:hover{
+    background: #ff3300;
+}
+ body{
+        background-image: white;
+ }
+    .piret img{
+        width: 350px;
+        height: 290px;
+       
+        margin-left: 500px;
+    }

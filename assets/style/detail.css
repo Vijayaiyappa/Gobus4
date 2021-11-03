@@ -1,0 +1,179 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	box-sizing: border-box;
+  }
+  body{
+	font-family: montserrat;
+	background: whitesmoke;
+  }
+  nav{
+	background: linear-gradient(-225deg, #231557 0%, #44107A 29%,#c93042 67%, #231557 100%);
+	height: 80px;
+	width: 100%;
+  }
+  label.logo{
+	color: white;
+	font-size: 35px;
+	line-height: 80px;
+	padding: 0 100px;
+	font-weight: bold;
+  }
+  nav ul{
+	float: right;
+	margin-right: 20px;
+  }
+  nav ul li{
+	display: inline-block;
+	line-height: 80px;
+	margin: 0 5px;
+  }
+  nav ul li a{
+	color: white;
+	font-size: 17px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	text-transform: uppercase;
+  }
+  a.active,a:hover{
+	background: #1b9bff;
+	transition: .5s;
+  }
+  .checkbtn{
+	font-size: 30px;
+	color: white;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+  }
+  #check{
+	display: none;
+  }
+  @media (max-width: 952px){
+	label.logo{
+	  font-size: 30px;
+	  padding-left: 50px;
+	}
+	nav ul li a{
+	  font-size: 16px;
+	}
+  }
+  @media (max-width: 858px){
+	.checkbtn{
+	  display: block;
+	}
+	ul{
+	  position: fixed;
+	  width: 100%;
+	  height: 100vh;
+	  background: #2c3e50;
+	  top: 80px;
+	  left: -100%;
+	  text-align: center;
+	  transition: all .5s;
+	}
+	nav ul li{
+	  display: block;
+	  margin: 50px 0;
+	  line-height: 30px;
+	}
+	nav ul li a{
+	  font-size: 20px;
+	}
+	a:hover,a.active{
+	  background: none;
+	  color: #0082e6;
+	}
+	#check:checked ~ ul{
+	  left: 0;
+	}
+  }
+  section{
+	
+	background-size: cover;
+	height: calc(100vh - 80px);
+  }
+  .wrapper{
+	  margin:3% 10% 5% 10% ;
+	  box-shadow: 0 1px 4px 0 rgba(0,0,50, 0.3);
+	  background:white;
+  }
+  .table-box{
+	  
+	  margin:50px auto;
+	  
+  }
+  .table-row{
+	  width:95%;
+      display: table;
+	  background:transparent ;
+	  margin:10px auto;
+	  padding: 12px 0;
+	  color:#555;
+	  font-size:13px;
+	  box-shadow: 0 1px 4px 0 rgba(0,0,50, 0.3);
+  }
+  .table-cell{
+	  vertical-align: middle;
+	  display: table-cell;
+	  text-align: center;
+	  width:30%;
+	  padding: 4px 0;
+	  border-right: 1px solid red;
+	  font-size:20px;
+  }
+  .table-top{
+	  background:#3b5998 ;
+	  box-shadow: none;
+	  color:white;
+	  
+  }
+.table-top .table-cell{
+	border-right: 1px solid black;
+	font-size: 23px;
+}
+.lst-cell{
+	border-right: none;
+}
+.table-box .lst-cell{
+	border-right: none;
+}
+
+.table-box .dest .table-cell{
+	border-right:none;
+	
+}
+
+.table-box .dest {
+	box-shadow:none;
+	border:solid #3b5998;
+	font-size:20px;
+	font-family: 'Libre Baskerville', serif;
+	border-radius:6px;
+}
+
+.table-cell-left{
+	text-align: left;
+	padding-left: 10px;
+}
+.table-top{
+	border-radius: 5px;
+	font-size: 20px;
+}
+.table-box label{
+color:black;
+text-align:center ;
+font-size: 30px;
+margin-left:3%;
+margin-bottom: 3rem!important;
+
+}
+.fa-angle-double-left{
+color:#5c8a8a;
+font-size: 50px;
+
+}

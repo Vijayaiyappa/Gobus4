@@ -1,0 +1,48 @@
+<h1> feedback of user</h1>
+{% load account %}
+{% load static %}
+
+<!--  <link rel="stylesheet"href={% static 'style/adminspage.css' %}>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+       
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    
+    <link rel="stylesheet"href={% static 'style/adminspage5.css' %}>
+    </head>
+    <body>
+    <div class="comment-container">
+  <h3 class="comment-container-title">USER'S_FEEDBACK</h3>
+{% for data in all_data  %}
+
+  <div class="comments">
+    <div class="comment flex items-start justify-start">
+      <div class="flex-1">
+        <h3 class="comment-author">{{data.user_name }}</h3>
+        <p class="comment-body">{{ data.comments }}</p>
+          
+      </div>
+    </div>
+  </div>
+  <div class="comment comment-new flex items-start justify-start">
+    <div class="flex-1">
+      <h3 class="comment-author">{% if user.is_authenticated %} {% user_display user %}{% endif %}</h3>
+      <form action="send_email" class="comment-form" method="POST">
+       {% csrf_token %}
+         <input type="hidden" name="email" value="{{ data.Email }}"/>
+         <input type="hidden" value="{{ data.id }}" name="id"/>
+        <textarea placeholder="Add a comment" class="comment-input" name="comments"></textarea>
+        <input type="submit" class="comment-submit" value="Send" name="feedback">
+      </form>
+    </div>
+  </div>
+{% endfor %}
+        
+</div>    
+       
+    </body>
+</html>

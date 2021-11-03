@@ -1,0 +1,66 @@
+
+
+ .inactive2{
+ display: none;
+  }
+  .inactive{
+    display: none;
+     }
+
+
+.wrap input[type="text"]{
+    background:white;
+    outline: none;
+    border-radius:5px ;
+    color:black;
+    font-size: 16px;
+    
+
+    text-align: start;
+    width:130%;
+    border: 2px solid blue;
+   
+
+}
+@media (max-width: 858px){
+    .wrap input[type="text"]{
+        border: 2px solid black;
+    }
+}
+
+.wrap{
+    width: 15.2em;
+    height: 20%;
+   
+}
+
+#myTable2 li ,#myTable  li{
+    background:white;
+   list-style-type: none;    
+    font-size: 25px;
+    cursor: pointer;
+    padding:10px  5px  5px 10px;
+}
+.wrap  #hid2  #get2 #myTable2 li:hover,.wrap  #hid  #get #myTable li:hover{
+    background:royalblue;
+}
+#myTable2,#myTable {
+background:white;
+margin-top: -3%;
+border-radius: 0px 0px 10px 10px;
+height:120px;
+overflow-y: scroll;
+width: 150%;
+
+}
+#hid2 ul::-webkit-scrollbar,#hid ul::-webkit-scrollbar {
+    width: 3px;
+    background: #0d141f;
+    border-radius: 0 8px 8px 0;
+    
+}
+#hid,#hid2,#hid3{
+position: absolute;
+z-index: 1;
+width: 15.2em;
+}

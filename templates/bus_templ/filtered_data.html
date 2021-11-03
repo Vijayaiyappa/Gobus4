@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Filtered data given by user</h2>
+
+<table>
+  <tr>
+      <th>middle route</th>
+
+    <th>source</th>
+    <th>Destination</th>
+    <th>arrive time</th>
+	    <th>Departure time</th>
+		    <th>Bus Name</th>
+
+
+  </tr>
+
+{% for i in array %}
+ <tr>
+    <td>{{i.0}} </td>
+    <td>{{i.1}}</td>
+    <td>{{i.2}}</td>
+	<td>{{i.3}}</td>
+	<td>{{i.4}}</td>
+	<td>{{i.5}}</td>
+  </tr>
+ 
+{% endfor %}
+</table>
+
+
+<h1>Incorrect Filtered data</h1>
+
+<table>
+  <tr>
+      <th>town_tab_name</th>
+    <th>post_id</th>
+	    <th>complaint</th>
+	
+
+
+  </tr>
+
+{% for i in unwan %}
+ <tr>
+    <td>{{i.0}} </td>
+    <td>{{i.1}}</td>
+    <td>{{i.2}}</td>
+	
+  </tr>
+ 
+{% endfor %}
+</table>
+</body>
+</html>

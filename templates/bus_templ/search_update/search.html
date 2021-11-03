@@ -1,0 +1,26 @@
+
+
+{% load static %}
+<html>
+<head>
+ <link rel="stylesheet" href={% static 'style/userinput_details.css' %}>
+  <title>user input</title>
+</head>
+    <body>
+<form action="srch_res1" method="POST" >
+  
+    <div class="recto" style="height:265px">
+    <h1>Search DETAILS</h1>
+   {% csrf_token %}
+<input type="text" name="tab_name"  class="user-input" placeholder="table" autocomplete="off"/><br>
+<input type="text" name="townid"   class="user-input" placeholder="town_id" autocomplete="off"/>
+<input type="submit" value="search"/>
+  
+    </div>
+</form>
+       
+    </body>
+
+
+
+</html>
