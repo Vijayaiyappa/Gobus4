@@ -26,121 +26,6 @@ def home(request):
     return render(request,"bus_templ/home.html")
 
 
-#user_input_details
-def user_inputs(request):
-    return render(request,"bus_templ/user_input_form2.html")
-
-def srch_data(request):
-    return render(request,"bus_templ/search_update/search.html")
-
-def src_res(request):
-    town_name=request.POST["tab_name"]
-    town_id=request.POST["townid"]
-    data=filterpage.updater.fetch_data(town_name,town_id)
-    return render(request,"bus_templ/search_update/resultupdate.html",{"data":data,"table_name":town_name,"town_id":town_id})
-def up(request):
-    print("helo world")
-    mid_r=request.POST["middle_route"]
-    src=request.POST["source"]
-    dest=request.POST["dest"]
-    arrive_t=request.POST["arrive_t"]
-    leave_t=request.POST["leave_t"]
-    bus_name=request.POST["busname"]
-    tow_id=request.POST["twn_id"]
-    filterpage.updater.update_pls(mid_r,src,dest,arrive_t,leave_t,bus_name,tow_id)
-    return HttpResponse("<h1 style='font-size:50px ;margin-top:300px '><center>______updated______</center><br><a href='http://127.0.0.1:8000/search'  %}'>Back</a></h1>")
-
-def user_input_details(request):
-     print(request)
-     source1=request.GET["source"]
-     dest=request.GET["destination"]
-     middleroot=request.GET["middleroot"]
-     arrive_t1=request.GET["arrive_t"]
-     leavet1=request.GET["depart"]
-     bus_name1=request.GET["busnamesid"] #depart
-     
-     data_given_by_user.objects.create(Middle_route=middleroot,source=source1 ,destination=dest, arrive_t=arrive_t1 ,leave_t=leavet1, Busname=bus_name1)
-     return render(request,"bus_templ/thank4feed.html")
-
-
-#help page
-def help(request):
-    return render(request,"bus_templ/help.html")
-
-def query_details_thank(request):
-    return render(request,"bus_templ/lookur_query.html")
-
-
-
-def feedback(request):
-    return render(request,"bus_templ/feedback4.html")
-
-def getfeedback_data(request):
-    name=request.POST["name"]
-    email=request.POST["email"]
-    comment=request.POST["comment"]
-
-    print("helo world the donkey")
-    #c=apps.get_model("bus","") 
-    feeback_data.objects.create(comments=comment,Email=email,user_name=name)
-    return render(request,"bus_templ/feedbackthanku.html")
-
-def admin_main_feedback(request):
-    all_data=feeback_data.objects.all()
-    return render(request,"bus_templ/feedbackuser/adpage.html",{"all_data":all_data})
-
-
-
-#@login_required
-def custom_feedback(request):
-    print(request)
-    source=request.POST["source"]
-    dest=request.POST["dest"]
-    time=request.POST["time"]
-    return render(request,"bus_templ/custom_feeback/feed_on_details.html",{"src":source,"dest":dest,"time":time})
-
-def store_custom_feedback(request):
-    
-   
-    return render(request,"bus_templ/custom_feeback/feed_on_details.html")
-
-def dump_data(request):
-    print(request.POST)
- 
-    source1=request.POST["source"]
-    dest2=request.POST["dest"]
-    time2=request.POST["time"]
-    email=request.POST["email"]
-    print(email)
-    username=request.POST["name"]
-    comments2=request.POST["comments"]
-    detailquery.objects.create(source=source1,dest=dest2,time=time2,Email=email,comments=comments2,user_name=username)
-    return render(request,"bus_templ/lookur_query.html")
-    
-def admin_page_to_reply_comments(request):
-    all=detailquery.objects.all()
-    return render(request,"bus_templ/custom_feeback/aminspage.html",{"all_data":all})
-
-
-def contact_form_reply(request):
-    print("____________________________")
-    all=save_contact_inf.objects.all()
-    return render(request,"bus_templ/contact_form/contactus.html",{"all_data":all})
-
-#comments
-def contact_us2(request):
-    print("heoo")
-    return render(request,"bus_templ/contact_form/usercontact.html")
-
-def save_contacted_info(request):
-    name=request.POST["name"]
-    email=request.POST["email"]
-    comment=request.POST["comments"]
-    save_contact_inf.objects.create(user_name=name,comments=comment,Email=email)
-    return render(request,"bus_templ/lookur_query.html")
-
-
-
 def send_mails(request):
     print(request)
     
@@ -177,9 +62,6 @@ def send_mails(request):
         return render(request,"bus_templ/custom_feeback/aminspage.html",{"all_data":all})
 
     
-
-def storefeedback(request):
-    pass
 
 def reapeated_data(request):
     arr=filterpage.pan.filt()
@@ -327,6 +209,121 @@ def get_data(request):
             "data":count.likes_count
             })
     
+
+
+#user_input_details
+def user_inputs(request):
+    return render(request,"bus_templ/user_input_form2.html")
+
+def srch_data(request):
+    return render(request,"bus_templ/search_update/search.html")
+
+def src_res(request):
+    town_name=request.POST["tab_name"]
+    town_id=request.POST["townid"]
+    data=filterpage.updater.fetch_data(town_name,town_id)
+    return render(request,"bus_templ/search_update/resultupdate.html",{"data":data,"table_name":town_name,"town_id":town_id})
+def up(request):
+    print("helo world")
+    mid_r=request.POST["middle_route"]
+    src=request.POST["source"]
+    dest=request.POST["dest"]
+    arrive_t=request.POST["arrive_t"]
+    leave_t=request.POST["leave_t"]
+    bus_name=request.POST["busname"]
+    tow_id=request.POST["twn_id"]
+    filterpage.updater.update_pls(mid_r,src,dest,arrive_t,leave_t,bus_name,tow_id)
+    return HttpResponse("<h1 style='font-size:50px ;margin-top:300px '><center>______updated______</center><br><a href='http://127.0.0.1:8000/search'  %}'>Back</a></h1>")
+
+def user_input_details(request):
+     print(request)
+     source1=request.GET["source"]
+     dest=request.GET["destination"]
+     middleroot=request.GET["middleroot"]
+     arrive_t1=request.GET["arrive_t"]
+     leavet1=request.GET["depart"]
+     bus_name1=request.GET["busnamesid"] #depart
+     
+     data_given_by_user.objects.create(Middle_route=middleroot,source=source1 ,destination=dest, arrive_t=arrive_t1 ,leave_t=leavet1, Busname=bus_name1)
+     return render(request,"bus_templ/thank4feed.html")
+
+
+#help page
+def help(request):
+    return render(request,"bus_templ/help.html")
+
+def query_details_thank(request):
+    return render(request,"bus_templ/lookur_query.html")
+
+
+
+def feedback(request):
+    return render(request,"bus_templ/feedback4.html")
+
+def getfeedback_data(request):
+    name=request.POST["name"]
+    email=request.POST["email"]
+    comment=request.POST["comment"]
+
+    print("helo world the donkey")
+    #c=apps.get_model("bus","") 
+    feeback_data.objects.create(comments=comment,Email=email,user_name=name)
+    return render(request,"bus_templ/feedbackthanku.html")
+
+def admin_main_feedback(request):
+    all_data=feeback_data.objects.all()
+    return render(request,"bus_templ/feedbackuser/adpage.html",{"all_data":all_data})
+
+
+
+#@login_required
+def custom_feedback(request):
+    print(request)
+    source=request.POST["source"]
+    dest=request.POST["dest"]
+    time=request.POST["time"]
+    return render(request,"bus_templ/custom_feeback/feed_on_details.html",{"src":source,"dest":dest,"time":time})
+
+def store_custom_feedback(request):
+    
+   
+    return render(request,"bus_templ/custom_feeback/feed_on_details.html")
+
+def dump_data(request):
+    print(request.POST)
+ 
+    source1=request.POST["source"]
+    dest2=request.POST["dest"]
+    time2=request.POST["time"]
+    email=request.POST["email"]
+    print(email)
+    username=request.POST["name"]
+    comments2=request.POST["comments"]
+    detailquery.objects.create(source=source1,dest=dest2,time=time2,Email=email,comments=comments2,user_name=username)
+    return render(request,"bus_templ/lookur_query.html")
+    
+def admin_page_to_reply_comments(request):
+    all=detailquery.objects.all()
+    return render(request,"bus_templ/custom_feeback/aminspage.html",{"all_data":all})
+
+
+def contact_form_reply(request):
+    print("____________________________")
+    all=save_contact_inf.objects.all()
+    return render(request,"bus_templ/contact_form/contactus.html",{"all_data":all})
+
+#comments
+def contact_us2(request):
+    print("heoo")
+    return render(request,"bus_templ/contact_form/usercontact.html")
+
+def save_contacted_info(request):
+    name=request.POST["name"]
+    email=request.POST["email"]
+    comment=request.POST["comments"]
+    save_contact_inf.objects.create(user_name=name,comments=comment,Email=email)
+    return render(request,"bus_templ/lookur_query.html")
+
 
 
  
